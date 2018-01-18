@@ -46,8 +46,10 @@ class Matrix:
                     total -= self.rrs[0][i] * sub_mat.det
             return total
         return deter_help(self, 0)
+    @property
     def transpose(self):
         return Matrix(self.n, self.m, self.columns)
+    @property
     def inverse(self):
         assert self.m == self.n, "Only square matrices can be inverted."
         assert self.is_invertible(), "This matrix is not invertible."
